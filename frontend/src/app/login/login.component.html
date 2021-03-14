@@ -1,0 +1,38 @@
+<div [@routerTransition] class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>Bamthobe</h1>
+            <form role="form" (submit)="onLogIn(loginForm)" #loginForm="ngForm">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Email' | translate"
+                            class="form-control input-underline input-lg"
+                            name="email"
+                            type="email"
+                            ngModel
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Password' | translate"
+                            class="form-control input-underline input-lg"
+                            name="password"
+                            type="password"
+                            ngModel
+                            required
+                        />
+                    </div>
+                </div>
+                <button [disabled]="!loginForm.valid" class="btn rounded-btn">{{
+                    'Log in' | translate
+                }}</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner></ngx-spinner>
